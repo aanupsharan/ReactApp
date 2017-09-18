@@ -31,5 +31,5 @@
   "scripts": {
     "build": "NODE_ENV=production webpack --config ./webpack.prod.config.js",
     "start": "node ./app/app.js"
-  },
+  }
 }
