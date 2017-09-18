@@ -31,6 +31,8 @@
   "scripts": {
     "build": "NODE_ENV=production webpack --config ./webpack.prod.config.js",
     "prestart": "NODE_ENV=production webpack --config ./webpack.prod.config.js",
+    "heroku-prebuild": "echo This runs before Heroku installs your dependencies.",
+    "heroku-postbuild": "echo This runs afterwards.",
     "start": "node ./app/app.js"
   }
 }
