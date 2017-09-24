@@ -1,28 +1,28 @@
 module.exports = {
 	context: __dirname + '/app',
-	entry: { 
-		app: './js/app.js',
-		index: './index.html',
+	entry: {
+		app: './src/app.js',
+		index: './index.html'
 	},
 	output: {
 		filename: '[name].js',
-		path: __dirname + '/dist',
+		path: __dirname + '/dist'
 	},
-	resolve:{
+	resolve: {
 		extensions: ['.js','.jsx','.json','.html']
 	},
 	module:{
-		loaders:[
-				{	
-					test: /\.jsx?$/,
-					exclude: /node_modules/,
-					loaders: ['react-hot-loader','babel-loader']
-				},
-				{
-					test: /\.html$/,
-					exclude: '/node_modules/',
-					loader: 'file-loader?name=[name].[ext]'
-				}
-			]
-		}
+		loaders: [
+			{
+				test: /\.(js|jsx)$/,
+				exclude: /node_modules/,
+				loaders: ['react-hot-loader','babel-loader']
+			},
+			{
+				test: /\.html$/,
+				exclude: /node_modules/,
+				loader: 'file-loader?name=[name].[ext]'
+			}
+		]
+	}
 };

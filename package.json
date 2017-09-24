@@ -21,15 +21,21 @@
     "webpack-dev-server": "^2.8.2",
     "webpack-dev-middleware": "^1.6.1",
     "webpack-hot-middleware": "^2.10.0",
-    "webpack": "^3.6.0",
     "express": "^4.13.4",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-router": "^4.2.0"
   },
   "scripts": {
-    "build": "NODE_ENV=production webpack --config ./webpack.prod.config.js",
+    "generate": "plop --plopfile templates/index.js",
+    "build": "webpack webpack.config.js",
     "heroku-postbuild": "NODE_ENV=production webpack ./webpack.config.js",
-    "start": "node ./app/app.js"
+    "start": "node ./app/app.js",
+		"dev": "node node_modules/webpack-dev-server/bin/webpack-dev-server.js"
+  },
+  "devDependencies": {
+    "fs": "0.0.1-security",
+    "path": "^0.12.7",
+    "plop": "^1.8.1"
   }
 }
